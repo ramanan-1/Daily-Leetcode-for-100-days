@@ -1,18 +1,21 @@
-
+# LeetCode Problem: https://leetcode.com/problems/length-of-last-word/
+# Difficulty: Easy
 
 def lengthOfLastWord(s):
-    
-        l,r = 0,len(s)-1
-        count = 0
+    r = len(s) - 1
+    count = 0
 
-        while r >= l and s[r] == " " :
-            r-=1
+    # Trim trailing spaces
+    while r >= 0 and s[r] == " ":
+        r -= 1
 
-        while r >= l and s[r] != " ":
-            count += 1
-            r-=1
+    # Count characters until the next space
+    while r >= 0 and s[r] != " ":
+        count += 1
+        r -= 1
 
-        return count 
-    
+    return count
+
+# Example
 s = "fly me   to   the moon  "
-print(lengthOfLastWord(s))
+print(lengthOfLastWord(s))  # Output: 4
