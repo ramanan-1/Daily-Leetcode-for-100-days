@@ -1,4 +1,4 @@
-def finalPrices(self, prices: List[int]) -> List[int]:
+def finalPrices(prices):
     
         discount = 0
         stack = []
